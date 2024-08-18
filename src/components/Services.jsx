@@ -1,5 +1,8 @@
 import Heading from "./Heading";
 import Section from "./Section";
+import { check, service1, service2, service3 } from "../assets";
+import { brainwaveServices, brainwaveServicesIcons } from "../constants";
+import Generating from "./Generating";
 
 const Services = () => {
   return (
@@ -9,6 +12,34 @@ const Services = () => {
           title="Generative AI made for creators"
           text="Brainwave unlocks the potential of AI-powered applications"
         />
+
+        <div className="relative">
+          <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 bord;er border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
+              <img
+                className="w-full h-full object-cover md:object-right"
+                width={800}
+                height={730}
+                alt="Smartest AI"
+                src={service1}
+              />
+            </div>
+
+            <div className="relative z-1 max-w-[17rem] ml-auto">
+              <h4>Smartest AI</h4>
+              <p>Brainwave unlocks the potential of AI-powered applications</p>
+              <ul className="body-2">
+                {brainwaveServices.map((item, index) => (
+                  <li key={index}>
+                    <img src={check} />
+                    <p>{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Generating className="absolute left-4 bottom-4 right-4" />
+          </div>
+        </div>
       </div>
     </Section>
   );
